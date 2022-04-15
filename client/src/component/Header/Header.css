@@ -1,0 +1,16 @@
+
+.img{
+    width: 100px;
+    height: 100px
+}
+.logo {
+    background-color:RGB(10, 15, 21)
+}
+.header{
+    color:RGB(22, 246, 251)
+}
+.profile{
+    position:relative;
+    left: 40%;
+    margin-right: 20px;
+}
