@@ -1,0 +1,34 @@
+
+.container {
+    padding: 16px;
+  }
+button {
+    background-color: RGB(10, 15, 21);
+    color:RGB(22, 246, 251);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  form {
+    border: 3px solid RGB(178, 81, 125);
+    background-color: RGB(10, 15, 21);
+    float: left;
+  }
+
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(47, 38, 38);
+    box-sizing: border-box;
+    color: RGB(178, 81, 125);
+  }
+  label{
+      color: RGB(22, 246, 25);
+  }
