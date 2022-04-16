@@ -25,9 +25,11 @@ button {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
+    font-weight: bold;
     border: 1px solid rgb(47, 38, 38);
     box-sizing: border-box;
     color: RGB(178, 81, 125);
+    background-color: rgb(230, 200, 200);
   }
   label{
       color: RGB(22, 246, 25);
