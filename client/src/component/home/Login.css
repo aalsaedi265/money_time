@@ -2,6 +2,11 @@
 .container {
     padding: 16px;
   }
+
+  .error{
+    color: RGB(151, 6, 45);
+  }
+
 button {
     background-color: RGB(10, 15, 21);
     color:RGB(22, 246, 251);

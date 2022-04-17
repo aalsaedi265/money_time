@@ -8,8 +8,8 @@ const [username, setUsername] = useState("")
 const [password, setPassword] = useState("")
 const [loading, setLoading] = useState(false)
 
-const [error, setError] = useState([])
-
+const [error, setError] = useState("")
+const [pass, setPass] =useState("")
 
     function handleSubmit(x){
     x.preventDefault()
@@ -23,26 +23,29 @@ const [error, setError] = useState([])
     .then(data => {
 
         setLoading(false);
+
         if (data.ok){
 
             data.json().then(el=> setUser(el) )
         }else{
-
-            data.json().then(el=> setError(el.error))
+            data.json().catch(err=> {
+                setError( "wrong email")
+                setPass("wrong password")
+            })
         }
     })
-}
+}   
 
-
+  
     return (
+<div>
+        <div className="imgcontainer">
 
-     <form>
-         
-         <div className="imgcontainer">
+        </div>
 
-         </div>
+     <form onSubmit={handleSubmit} className="container" >
 
-    <div className="container">
+   
     
     <label for="username"><b>Username/Email</b> </label>
     <br></br>
@@ -50,7 +53,12 @@ const [error, setError] = useState([])
     id="username" 
     placeholder="username" 
     name="username"
-     required/>
+     required
+     value={username}
+     onChange={e => setUsername(e.target.value) }
+     />
+
+<p className="error"> {error}</p>
 
     <br></br>
 
@@ -60,59 +68,24 @@ const [error, setError] = useState([])
     placeholder="password" 
     name="password" 
     required  
-    id="password"/>
+    id="password"
+    value={password}
+    onChange={ e=> setPassword(e.target.value)}
+    />
+
+<p className="error"> {pass}</p>
     
     <br></br>
 
-    <button type="submit"> Login</button>
-    </div>
-
-
-
+    <button type="submit"> {loading? "Loading...": "Login" }</button>
+   
     </form>
 
-        
+   
+
+ </div>       
     )
 }
 
 export default Login;
 
-
-
-
-
-
-//     <form>
-         
-//          <div className="imgcontainer">
-
-//          </div>
-
-//     <div className="container">
-    
-//     <label for="username"><b>Username/Email</b> </label>
-//     <br></br>
-//     <input type="text" 
-//     id="username" 
-//     placeholder="username" 
-//     name="username"
-//      required/>
-
-//     <br></br>
-
-//     <label for="password"> <b>Password</b> </label>
-//     <br></br>
-//     <input type="password" 
-//     placeholder="password" 
-//     name="password" 
-//     required  
-//     id="password"/>
-    
-//     <br></br>
-
-//     <button type="submit"> Login</button>
-//     </div>
-
-
-
-//     </form>
