@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./Login.css"
+import {Link} from "react-router-dom"
 
 function Login (setUser){
 
@@ -76,9 +77,12 @@ const [pass, setPass] =useState("")
 <p className="error"> {pass}</p>
     
     <br></br>
-
+        <div className="btnSection">
     <button type="submit"> {loading? "Loading...": "Login" }</button>
-   
+
+    <Link to="/signup"> <button>sighup</button> </Link>
+        </div>
+
     </form>
 
    
