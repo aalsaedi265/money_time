@@ -9,6 +9,7 @@ import Login from "./component/home/Login";
 import Sighup from "./component/home/Sighup";
 
 import Header from "./component/Header/Header"
+import avatar from "./component/home/avatar"
 
 function App() {
 
@@ -46,9 +47,9 @@ function App() {
     <>
     <Routes>
 
-      <Route  path= "/login" element={ <Login setUser={setUser}/> } />
+      <Route exact  path= "/login" element={ <Login setUser={setUser}/> } />
 
-     <Route  path= "/sighup" element={ <Sighup setUser={setUser}/> } />
+     <Route exact path= "/sighup" element={ <Sighup setUser={setUser}/> } />
 
       <Route exact path= "/" element={  <Account />} />
 

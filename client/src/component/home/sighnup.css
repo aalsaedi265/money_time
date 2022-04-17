@@ -1,20 +1,4 @@
-
-.container {
-    padding: 16px;
-  }
-
-.btnSection{
-  display:flex;
-  flex-direction: row;
-
-  justify-content: space-around
-}
-
-  .error{
-    color: RGB(151, 6, 45);
-  }
-
-button {
+/* button {
     background-color: RGB(10, 15, 21);
     color:RGB(22, 246, 251);
     padding: 10px 35px;
@@ -22,20 +6,24 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
-  }
+  } */
   button:hover {
     opacity: 0.8;
   }
-  .container {
+
+  .form {
     border: 3px solid RGB(178, 81, 125);
     background-color: RGB(10, 15, 21);
-    float: left;
+    padding: 13px;
+    width: 40%;
+    position: absolute;
+    left: 30%;
   }
-
-  .inputLogin{
+  
+  .sighUpInput{
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 13px 25px;
+    margin: 17px 0;
     display: inline-block;
     font-weight: bold;
     border: 1px solid rgb(47, 38, 38);
@@ -43,6 +31,17 @@ button {
     color: RGB(178, 81, 125);
     background-color: rgb(230, 200, 200);
   }
-  label{
-      color: RGB(22, 246, 25);
+  .buttonchoice{
+    display:flex;
+    flex-direction: row;
+  
+    justify-content: space-around;
+
+    background-color: RGB(10, 15, 21);
+    color:RGB(22, 246, 251);
+    padding: 10px 40px;
+    margin: 4px 30px;
+    border: blueviolet;
+    cursor: pointer;
+    width: 60%;
   }

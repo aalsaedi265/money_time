@@ -54,6 +54,7 @@ const [pass, setPass] =useState("")
     id="username" 
     placeholder="username" 
     name="username"
+    className="inputLogin"
      required
      value={username}
      onChange={e => setUsername(e.target.value) }
@@ -68,6 +69,7 @@ const [pass, setPass] =useState("")
     <input type="password" 
     placeholder="password" 
     name="password" 
+    className="inputLogin"
     required  
     id="password"
     value={password}
@@ -80,7 +82,7 @@ const [pass, setPass] =useState("")
         <div className="btnSection">
     <button type="submit"> {loading? "Loading...": "Login" }</button>
 
-    <Link to="/signup"> <button>sighup</button> </Link>
+    <Link to="/sighup"> <button> sighup </button> </Link>
         </div>
 
     </form>
