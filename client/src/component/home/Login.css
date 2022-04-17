@@ -3,6 +3,13 @@
     padding: 16px;
   }
 
+.btnSection{
+  display:flex;
+  flex-direction: row;
+
+  justify-content: space-around
+}
+
   .error{
     color: RGB(151, 6, 45);
   }
@@ -10,8 +17,8 @@
 button {
     background-color: RGB(10, 15, 21);
     color:RGB(22, 246, 251);
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 10px 35px;
+    margin: 2px 0;
     border: none;
     cursor: pointer;
     width: 100%;

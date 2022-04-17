@@ -16,7 +16,7 @@ function App() {
 
   useEffect (() =>{
     
-    fetch("/me")
+    fetch("/account")
     .then(resp => resp.json())
     .then( x=> setUser(x) )
   },[])
