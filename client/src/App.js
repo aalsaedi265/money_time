@@ -1,5 +1,8 @@
 import React, {useEffect,useState} from 'react';
 import './App.css';
+
+// import 'bootstrap/dist/css/bootstrap.min.css'
+
 import {Route, Routes } from "react-router-dom";
 import Account from "./component/home/Account";
 import Login from "./component/home/Login";
