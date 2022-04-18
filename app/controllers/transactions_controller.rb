@@ -1,5 +1,4 @@
 class TransactionsController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def index
         render json: Transaction.all
@@ -29,10 +28,6 @@ class TransactionsController < ApplicationController
 
     def find_transaction
         Transaction.find(params[:id])
-    end
-    
-    def render_unprocessable_entity_response(exception)
-        render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
     end
     
 end
