@@ -1,8 +1,10 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./sighnup.css"
+import Avatar from "./Avatar"
+import Header from "../header/Header"
 
-function Sighup(setUser) {
+function Sighup({setUser,user,update}) {
 
     const [username, setUsername] =useState("");
     const [password, setPassword] = useState("");
@@ -12,6 +14,10 @@ function Sighup(setUser) {
 
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+
+
+    
+
 
 
     function handleSubmit(e){
@@ -37,17 +43,29 @@ function Sighup(setUser) {
             setLoading(false)
 
             if(response.ok){
-                response.json().then(info=> setUser(info) )
+                response.json().then(info=> {
+                    
+                    update(info)
+                    setUser([...user,info]) 
+                    
+                    } )
             }else{
                 response.json().catch(info=> setError(`invalid response`)  )
             }
-        }) 
+        })
+
+        e.target.reset() 
+        console.log("submitted")
     }
+
+    <Header name={name} picture={picture} />
 
     return (
         
         <div>
-            
+        
+        
+
         <form onSubmit={handleSubmit} className="form">
 
             <h3>We will be honored if you joined us</h3>
@@ -67,8 +85,8 @@ function Sighup(setUser) {
             <input 
             className="sighUpInput"
             id="picture"
-            type="file"
-            accept="image/*"
+            type="text"
+            // accept="image/*"
             value={picture}
             onChange={x => setPicture(x.target.value)}
             />
@@ -102,7 +120,7 @@ function Sighup(setUser) {
 
             <div className="buttonchoice">
 
-        <button className="buttonchoice" type="button" >{loading? "Loading...": "Creation"}</button>
+        <button onSubmit={handleSubmit} className="buttonchoice" type="submit" >{loading? "Loading...": "Creation"}</button>
 
         <Link to="/login"> <button className='buttonchoice'>Got Account Login </button></Link>
 
