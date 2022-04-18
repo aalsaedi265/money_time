@@ -8,8 +8,9 @@ import Account from "./component/home/Account";
 import Login from "./component/home/Login";
 import Sighup from "./component/home/Sighup";
 
-import Header from "./component/Header/Header"
-import avatar from "./component/home/avatar"
+import Header from "./component/header/Header"
+// import Avatar from "./component/home/Avatar"
+
 
 function App() {
 
@@ -22,14 +23,11 @@ function App() {
     .then( x=> setUser(x) )
   },[])
 
-  // if (!user) {return }
-
-  // <Route path='/welcome' element={<Home/>} />
-
   return (
 
     <div className="App">
-       <Header/>
+     <Header userInfo={user}/>
+       
 
   { user ? ( 
     
@@ -49,7 +47,7 @@ function App() {
 
       <Route exact  path= "/login" element={ <Login setUser={setUser}/> } />
 
-     <Route exact path= "/sighup" element={ <Sighup setUser={setUser}/> } />
+     <Route exact path= "/sighup" element={ <Sighup setUser={setUser} user={user}/> } />
 
       <Route exact path= "/" element={  <Account />} />
 
