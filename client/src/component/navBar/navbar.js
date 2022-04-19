@@ -1,8 +1,9 @@
 import React from "react";
 import "./navbar.css"
-function NavBar(){
+function NavBar({user}){
     return(
         <div class="containerNav">
+{/*             
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -10,7 +11,8 @@ function NavBar(){
                     <li><a href="/CustomerServices">Customer Services</a></li>
                     <li><a href="/AboutUs">About Us</a></li>
                 </ul>
-            </nav>
+            </nav> */}
+       
         </div>
     )
 }

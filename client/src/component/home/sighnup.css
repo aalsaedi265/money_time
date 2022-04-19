@@ -14,8 +14,9 @@
   .form {
     border: 3px solid RGB(178, 81, 125);
     background-color: RGB(10, 15, 21);
-    padding: 13px;
-    width: 40%;
+    padding: 10px;
+    width: 35%;
+    /* height: 20%; */
     position: absolute;
     left: 30%;
   }
