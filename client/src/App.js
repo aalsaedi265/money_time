@@ -8,6 +8,8 @@ import Account from "./component/home/Account";
 import Login from "./component/home/Login";
 import Sighup from "./component/home/Sighup";
 import NavBar from './component/navBar/navbar';
+import CustomerService from './component/home/CustomerService'
+import AboutUs from './component/home/AboutUs';
 
 import Header from "./component/header/Header"
 // import Avatar from "./component/home/Avatar"
@@ -42,7 +44,11 @@ function App() {
 
       <Route exact  path= "/" element={ <Login setUser={setUser}/> } />
 
-     <Route exact path= "/sighup" element={ <Sighup setUser={setUser} user={user}/> } />
+      <Route exact path= "/sighup" element={ <Sighup setUser={setUser} user={user}/> } />
+
+      <Route exact path= "/AboutUs" element = { <AboutUs /> } />
+
+      <Route exact path= "/CustomerService" element = { <CustomerService /> } />
 
 
     </Routes>
