@@ -80,9 +80,9 @@ const [pass, setPass] =useState("")
     
     <br></br>
         <div className="btnSection">
-    <button type="submit"> {loading? "Loading...": "Login" }</button>
+    <button className= "btn btn-gradient btn-glow" type="submit"> {loading? "Loading...": "Login" }</button>
 
-    <Link to="/sighup"> <button> sighup </button> </Link>
+    <Link to="/sighup"> <button className= "btn btn-gradient btn-glow" > sighup </button> </Link>
         </div>
 
     </form>
