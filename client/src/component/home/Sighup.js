@@ -36,10 +36,11 @@ function Sighup({setUser,user,update}) {
             
             setLoading(false)
 
+            console.log(response)
+
             if(response.ok){
                 response.json().then(info=> {
                     
-                    update(info)
                     setUser([...user,info]) 
                     
                     } )
@@ -62,7 +63,6 @@ function Sighup({setUser,user,update}) {
 
         <form onSubmit={handleSubmit} className="form">
 
-            <h3>We will be honored if you joined us</h3>
 
             
 

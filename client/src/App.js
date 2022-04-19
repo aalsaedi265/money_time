@@ -28,12 +28,12 @@ function App() {
 
     <div className="App">
 
-     <Header userInfo={user}/>
-     <NavBar/>
+     <Header user={user}/>
+     {/* <NavBar user={user} /> */}
        
 
 
-     <Header userInfo={user}/>
+     {/* <Header userInfo={user}/> */}
   
     <>
     <Routes>

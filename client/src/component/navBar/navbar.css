@@ -7,12 +7,14 @@
 } */
 
 .containerNav {
-	width: 50%;
-	margin: 0 auto;
+	width: 60%;
+	margin: 6 auto;
+  padding: 1rem;
     background: #222;
     display: inline-block;
     border: 3px solid RGB(178, 81, 125);
     background-color: RGB(10, 15, 21);
+    margin-bottom: 1rem;
 }
 
 /* header {
