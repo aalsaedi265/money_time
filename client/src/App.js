@@ -7,6 +7,7 @@ import {Route, Routes } from "react-router-dom";
 import Account from "./component/home/Account";
 import Login from "./component/home/Login";
 import Sighup from "./component/home/Sighup";
+import NavBar from './component/navBar/navbar';
 
 import Header from "./component/header/Header"
 // import Avatar from "./component/home/Avatar"
@@ -27,6 +28,7 @@ function App() {
 
     <div className="App">
      <Header userInfo={user}/>
+     <NavBar/>
        
 
   { user ? ( 
