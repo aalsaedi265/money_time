@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :transactions, only: [:index, :show, :create, :destroy]
+  resources :users, only: [:index, :show, :create]
   
 
   post "/signup", to: "users#create"
