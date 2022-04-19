@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./sighnup.css"
-import Avatar from "./Avatar"
+//import Avatar from "./Avatar"
 import Header from "../header/Header"
 
 function Sighup({setUser,user,update}) {
@@ -15,11 +15,6 @@ function Sighup({setUser,user,update}) {
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
 
-
-    
-
-
-
     function handleSubmit(e){
 
         e.preventDefault()
@@ -32,12 +27,11 @@ function Sighup({setUser,user,update}) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name,
-                picture,
                 username,
+                image_url: picture,
                 password,
                 password_confirm: passwordConfirm
-            })
+            }),
         }).then(response =>{
             
             setLoading(false)
@@ -70,16 +64,7 @@ function Sighup({setUser,user,update}) {
 
             <h3>We will be honored if you joined us</h3>
 
-            <label for= "name"> First & Last name</label>
-
-            <input
-            className="sighUpInput"
-            type="text"
-            id="name"
-            value={name}
-            onChange={x => setName(x.target.value) }
-            />
-            <br></br>
+            
 
             <label for= "picture">Avatar Image</label>
             <input 
@@ -135,4 +120,15 @@ function Sighup({setUser,user,update}) {
     )
 }
 
-export default  Sighup
+export default Sighup
+
+//<label for= "name"> First & Last name</label>
+
+//<input
+//className="sighUpInput"
+//type="text"
+//id="name"
+//value={name}
+//onChange={x => setName(x.target.value) }
+///>
+//<br></br>
