@@ -1,16 +1,15 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./sighnup.css"
-//import Avatar from "./Avatar"
-import Header from "../header/Header"
+
 
 function Sighup({setUser,user,update}) {
 
     const [username, setUsername] =useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
-    const [name, setName] = useState("");
-    const [picture, setPicture] = useState("");
+    
+    const [image_url, setImage_url] = useState("");
 
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
@@ -28,7 +27,7 @@ function Sighup({setUser,user,update}) {
             },
             body: JSON.stringify({
                 username,
-                image_url: picture,
+                image_url,
                 password,
                 password_confirm: passwordConfirm
             }),
@@ -41,7 +40,7 @@ function Sighup({setUser,user,update}) {
             if(response.ok){
                 response.json().then(info=> {
                     
-                    setUser([...user,info]) 
+                    setUser(info) 
                     
                     } )
             }else{
@@ -52,8 +51,6 @@ function Sighup({setUser,user,update}) {
         e.target.reset() 
         console.log("submitted")
     }
-
-    <Header name={name} picture={picture} />
 
     return (
         
@@ -66,14 +63,14 @@ function Sighup({setUser,user,update}) {
 
             
 
-            <label for= "picture">Avatar Image</label>
+            <label for= "image_url">Avatar Image</label>
             <input 
             className="sighUpInput"
-            id="picture"
+            id="image_url"
             type="text"
             // accept="image/*"
-            value={picture}
-            onChange={x => setPicture(x.target.value)}
+            value={image_url}
+            onChange={x => setImage_url(x.target.value)}
             />
 
             <br></br>
