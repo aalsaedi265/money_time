@@ -26,35 +26,22 @@ function App() {
   return (
 
     <div className="App">
+
      <Header userInfo={user}/>
-       
-
-  { user ? ( 
-    
+  
     <>
     <Routes>
 
-      <Route path="/">
-       <Account user={user} />
-      </Route>
+      <Route exact path="/account" element={ <Account user={user} />} />
 
-      </Routes>
-
-   </>
-  ):(
-    <>
-    <Routes>
-
-      <Route exact  path= "/login" element={ <Login setUser={setUser}/> } />
+      <Route exact  path= "/" element={ <Login setUser={setUser}/> } />
 
      <Route exact path= "/sighup" element={ <Sighup setUser={setUser} user={user}/> } />
 
-      <Route exact path= "/" element={  <Account />} />
 
     </Routes>
   </>
-  )
-}
+
      </div>
     )
 }

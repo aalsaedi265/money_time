@@ -4,11 +4,21 @@
     border-radius: 50%;
 }
 .logo {
-    background-color:RGB(10, 15, 21)
+    font-family: 'DM Sans', sans-serif;
+  background-color: #1D1E22;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  background-color: transparent;
+
 }
 .header{
-    color:RGB(22, 246, 251)
+    background: linear-gradient(to right, #30CFD0, #c43ad6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
+
 .profile{
     position:relative;
     left: 40%;

@@ -120,9 +120,9 @@ function Sighup({setUser,user,update}) {
 
             <div className="buttonchoice">
 
-        <button onSubmit={handleSubmit} className="buttonchoice" type="submit" >{loading? "Loading...": "Creation"}</button>
+        <button className="btn-gradient" onSubmit={handleSubmit} type="submit" >{loading? "Loading...": "Creation"}</button>
 
-        <Link to="/login"> <button className='buttonchoice'>Got Account Login </button></Link>
+        <Link to="/"> <button className='btn-gradient'>Got Account Login </button></Link>
 
             </div>
 
