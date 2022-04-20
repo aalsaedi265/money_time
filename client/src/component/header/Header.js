@@ -24,6 +24,7 @@ function Header ({user}){
                     <li><a href="/MyAccount">My Account</a></li>
                     <li><a href="/CustomerService">Customer Service</a></li>
                     <li><a href="/AboutUs">About Us</a></li>
+                    
                 </ul>
             </nav>
        
