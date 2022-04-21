@@ -1,0 +1,22 @@
+.github {
+    width: 500px;
+    height: 250px;
+    border: 1px solid white;
+    font-size: 35px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    padding: 100px;
+    background-color: transparent;
+}
+
+img {
+    border-radius: 25%;
+    width: 100px;
+    height: 100px;
+    padding-top: 20px;
+  }
+
+  a:link {
+    text-decoration:none;
+  }
