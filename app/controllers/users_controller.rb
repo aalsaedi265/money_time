@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     #   end
 
     def show
+        render json: @current_user,  status: 200
+    end
+
+    # serializer: UserWithTransactionsSerializer,
+    def trans
         render json: @current_user, serializer: UserWithTransactionsSerializer, status: 200
     end
 
