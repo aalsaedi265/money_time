@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./Login.css"
 import {Link} from "react-router-dom"
 
-function Login ({setUser}){
+function Login ({onLogin}){
 
     
 const [username, setUsername] = useState("")
@@ -27,7 +27,7 @@ const [pass, setPass] =useState("")
 
         if (data.ok){
 
-            data.json().then(el=> setUser(el) )
+            data.json().then(el=> onLogin(el) )
         }else{
             data.json().catch(err=> {
                 setError( "wrong email")
