@@ -4,16 +4,13 @@ import Sighup from "../home/Sighup"
 
 // function Header ({user}
 function Header ({user,onLogout}){
-    console.log(user)
-    function handleLogout() {
+    
+  function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
         }).then(() => onLogout());
       }
-    
-
-
-
+  
     return (
 
 
@@ -32,7 +29,9 @@ function Header ({user,onLogout}){
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <p>a</p>
+        <div>
+            <a id="loginButton"href="/">Login</a>
+        </div>
       )}
         
 

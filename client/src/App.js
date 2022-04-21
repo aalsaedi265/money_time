@@ -26,8 +26,6 @@ function App() {
     });
   }, []);
 
-  console.log(user)
-
 
   function handleLogin(user){
     setUser(user)
@@ -59,7 +57,7 @@ function App() {
     <>
     <Routes>
 
-      <Route exact path="/account" element={ <Account user={user} />} />
+      <Route exact path="/MyAccount" element={ <Account user={user}/>} />
 
       <Route exact  path= "/" element={ <Login onLogin={handleLogin}/> } />
 
