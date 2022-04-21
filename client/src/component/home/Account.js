@@ -10,7 +10,7 @@ function Account({user}) {
         { name: "Subham", age: 25, gender: "Male"},
       ]
 
-    const  [trans,setTrans] = useState()
+    const  [trans,setTrans] = useState([])
     const [newTrans, setNewTrans] = useState([])
     
     function onChange(event) {
