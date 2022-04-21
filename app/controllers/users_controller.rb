@@ -4,6 +4,12 @@ class UsersController < ApplicationController
     skip_before_action :authorize, only: :create
 
 
+
+    # def show
+    #     user = User.find(session[:user_id])
+    #     render json: user
+    #   end
+
     def show
         render json: @current_user, serializer: UserWithTransactionsSerializer, status: 200
     end

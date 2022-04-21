@@ -3,19 +3,39 @@ import React,{useState} from "react"
 import Sighup from "../home/Sighup"
 
 // function Header ({user}
-function Header ({user}){
+function Header ({user,onLogout}){
+    console.log(user)
+    function handleLogout() {
+        fetch("/logout", {
+          method: "DELETE",
+        }).then(() => onLogout());
+      }
+    
 
- 
+
 
     return (
 
+
+        
+
+
+
         <div class="logo">
             <h1 class= "header">Welcome to Money Time </h1>
-        <div class= "profile">
-            <img class="img" src={ user? user.image_url :  "https://i.pinimg.com/originals/25/99/8c/25998cb58d6201a9580c0ff25845c6bc.jpg"} alt="user profile" />
 
-            <p class="header"> {user? user.username : "Greetings"}</p>
+
+    {user ? (
+        <div class= "profile">
+          <p>Welcome, {user.username}!</p>
+          <img class="img" src={ user? user.image_url :  ""} alt="user profile" ></img>
+          <button onClick={handleLogout}>Logout</button>
         </div>
+      ) : (
+        <p>a</p>
+      )}
+        
+
         <div class="containerNav">
             
             <nav>

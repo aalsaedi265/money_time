@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "./CustomerService.css";
-import { FiPlus } from "react-icons/fi";
+// import { FiPlus } from "react-icons/fi";
 
 
 function CustomerService() {
@@ -31,9 +31,9 @@ function CustomerService() {
                 <h4 className="question-style">
                       How do I make a new profile?
                 </h4>
-                <FiPlus
+                {/* <FiPlus
                   className={active ? `question-icon rotate` : `question-icon`}
-                />
+                /> */}
               </div>
               <div
                 ref={contentRef}

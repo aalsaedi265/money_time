@@ -18,19 +18,38 @@ import Header from "./component/header/Header"
 function App() {
 
   const [user, setUser] = useState(null)
+    useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
-  useEffect (() =>{
+  console.log(user)
+
+
+  function handleLogin(user){
+    setUser(user)
+  }
+
+   function handleLogout() {
+    setUser(null);
+  }
+  
+
+  // useEffect (() =>{
     
-    fetch("/account")
-    .then(resp => resp.json())
-    .then( x=> setUser(x) )
-  },[])
+  //   fetch("/me")
+  //   .then(resp => resp.json())
+  //   .then( x=> console.log(x) )
+  // },[])
 
   return (
 
     <div className="App">
 
-     <Header user={user}/>
+     <Header user={user} onLogout={handleLogout}/>
      {/* <NavBar user={user} /> */}
        
 
@@ -42,7 +61,7 @@ function App() {
 
       <Route exact path="/account" element={ <Account user={user} />} />
 
-      <Route exact  path= "/" element={ <Login setUser={setUser}/> } />
+      <Route exact  path= "/" element={ <Login onLogin={handleLogin}/> } />
 
       <Route exact path= "/sighup" element={ <Sighup setUser={setUser} user={user}/> } />
 
