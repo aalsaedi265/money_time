@@ -1,8 +1,4 @@
 
-.container {
-    padding: 16px;
-  }
-
 .btnSection{
   display:flex;
   flex-direction: row;
@@ -22,6 +18,7 @@
     color: RGB(151, 6, 45);
   }
 
+
 button {
   padding: 10px;
   border-radius: 10px;
@@ -34,7 +31,25 @@ button {
   button:hover {
     opacity: 0.6;
   }
+
+  /* .home{
+    display: flex;
+    height:100px
+
+  }
+
+
+.sideView{
+  flex-grow: 1;
+
+  width: 60%;
+  height: 70%;
+  border-radius: 50%;
+} */
+
   .container {
+    width:20%;
+    padding: 16px;
     border: 3px solid RGB(178, 81, 125);
     background-color: RGB(10, 15, 21);
     float: left;

@@ -12,7 +12,7 @@ import CustomerService from './component/home/CustomerService'
 import AboutUs from './component/home/AboutUs';
 
 import Header from "./component/header/Header"
-// import Avatar from "./component/home/Avatar"
+
 
 
 function App() {
@@ -36,23 +36,12 @@ function App() {
   }
   
 
-  // useEffect (() =>{
-    
-  //   fetch("/me")
-  //   .then(resp => resp.json())
-  //   .then( x=> console.log(x) )
-  // },[])
-
   return (
 
     <div className="App">
 
      <Header user={user} onLogout={handleLogout}/>
-     {/* <NavBar user={user} /> */}
-       
 
-
-     {/* <Header userInfo={user}/> */}
   
     <>
     <Routes>
