@@ -58,6 +58,15 @@
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 50px;
+    padding: 15px;
   }
 
+
+
+.trans{
+  /* width: 1000px;
+  width:600px;  */
+  overflow-y:scroll; 
+  position:relative;
+  height: 400px;
+}

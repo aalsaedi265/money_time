@@ -11,6 +11,6 @@ Transaction.create!(expenditure:35, user_id: u1.id,description: "Birthday Gifts"
 Transaction.create!(expenditure:55, user_id: u1.id,description: "Gym Membership")
 Transaction.create!(expenditure:5, user_id: u1.id,description: "Notebooks")
 Transaction.create!(expenditure:90, user_id: u1.id,description: "Internet Bill")
-
+Transaction.create!(expenditure:42.0, user_id: u1.id,description: "Papa Johns")
 
 puts "Seeding done!"

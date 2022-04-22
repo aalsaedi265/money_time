@@ -26,7 +26,8 @@ function Header ({user,onLogout}){
         <div class= "profile">
           <p>Welcome, {user.username}!</p>
           <img class="img" src={ user? user.image_url :  ""} alt="user profile" ></img>
-          <button onClick={handleLogout}>Logout</button>
+          <br></br>
+          <button class="btn btn-gradient btn-glow" onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <div>
