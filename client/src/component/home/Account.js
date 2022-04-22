@@ -4,43 +4,66 @@ import React, {useState,useEffect} from "react"
 import "./Account.css"
 
 function Account({user}) {
-    const data = [
-        { name: "Anom", age: 19, gender: "Male" },
-        { name: "Megha", age: 19, gender: "Female" },
-        { name: "Subham", age: 25, gender: "Male"},
-      ]
-
-    const  [trans,setTrans] = useState()
+    const  [trans,setTrans] = useState([])
     const [newTrans, setNewTrans] = useState([])
+    const [order,setOrder] = useState("ASC")
+
+
+    const sorting =(col)=>{
+      if (order === "ASC"){
+        const sorted = [...trans].sort((a,b)=>
+        a[col] > b[col] ? 1 : -1
+        );
+        setTrans(sorted);
+        setOrder("DSC")
+      } if (order === "DSC"){
+        const sorted = [...trans].sort((a,b)=>
+        a[col] < b[col] ? 1 : -1
+        );
+        setTrans(sorted);
+        setOrder("ASC")
+      }
+    }
     
     function onChange(event) {
       setNewTrans({ ...newTrans, [event.target.name]: event.target.value })
   }
     
-    // test = trans.map((tran)=>tran)
-      // console.log(test)
-   console.log(trans)
-    
    function handleSubmit(event){
     event.preventDefault()
-   }
-
-
-   const sum = data.reduce((accumulator, object) => {
-    return accumulator + object.age;
+    // setNewTrans({...newTrans, user_id :user.id})
+    // console.log(newTrans)
+    // debugger
+    fetch("/transactions", {
+      method: "POST",
+      headers:{
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({newTrans}),
+   })
+  }
+ 
+   const totalDeposits = trans.reduce((accumulator, object) => {
+    return accumulator + object.deposit;
   }, 0);
+  const totalCredits = trans.reduce((accumulator, object) => {
+    return accumulator + object.expenditure;
+  }, 0);
+
+  const sum = (totalDeposits - totalCredits).toFixed(2)
 
 
    
-   console.log(newTrans)
+ 
    
    useEffect(() => {
         fetch("/me/transactions").then((response) => {
           if (response.ok) {
-            response.json().then((data) => setTrans(data));
+            response.json().then((data) => setTrans(data.transactions));
           }
         });
       }, []);
+
     return (
         
         
@@ -53,19 +76,19 @@ function Account({user}) {
 <div className="App">
     <h3 id="totalBalance">Your Total Balance is ${sum}</h3>
 
-    <div>
-      <table>
-        <tr>
-          <th>Description</th>
-          <th>Deposits/Credits</th>
-          <th>Withdrawals/Debits</th>
-        </tr>
-        {data.map((val, key) => {
+    <div className="trans">
+      <table id="fullList">
+        <thead>
+          <th onClick={()=>sorting("description")}>Description</th>
+          <th onClick={()=>sorting("deposit")}>Deposits/Debits</th>
+          <th onClick={()=>sorting("expenditure")}>Withdrawals/Credits</th>
+        </thead>
+        {trans.map((val, key) => {
           return (
             <tr key={key}>
-              <td>{val.name}</td>
-              <td>{val.age}</td>
-              <td>{val.gender}</td>
+              <td>{val.discription}</td>
+              <td>{val.deposit}</td>
+              <td>{val.expenditure}</td>
             </tr>
           )
         })}

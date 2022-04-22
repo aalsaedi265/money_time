@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-
+    skip_before_action :authorize, only: :create
     def index
         render json: Transaction.all
     end
@@ -10,7 +10,9 @@ class TransactionsController < ApplicationController
     end
 
     def create
-        transaction = Transaction.create!(transaction_params)
+        
+        transaction = Transaction.create!(transaction_params )
+        byebug
         render json: transaction, status: 200
     end
 
@@ -23,7 +25,7 @@ class TransactionsController < ApplicationController
     private
 
     def transaction_params
-        params.permit(:deposit, :expenditure)
+        params.permit(:deposit, :expenditure,:discription)
     end
 
     def find_transaction
