@@ -26,3 +26,4 @@ function AboutUs() {
 }
 
 export default AboutUs;
+//my name is fuuud
