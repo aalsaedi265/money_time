@@ -92,12 +92,11 @@ const [pass, setPass] =useState("")
 {/* <Link to="/MyAccount"> {loading? "Loading...": "Login"  }</Link> */}
     <br></br>
         <div className="btnSection">
+     
+     
       <button className= "btn btn-gradient btn-glow" type="submit"
       
-      onClick={()=> {
-          setPassword(()=>"")
-          setUsername(()=>"")
-      }}
+    
       
       > 
       
