@@ -25,22 +25,27 @@ function Account({user}) {
       }
     }
     
+  
+
+
     function onChange(event) {
       setNewTrans({ ...newTrans, [event.target.name]: event.target.value })
   }
     
    function handleSubmit(event){
     event.preventDefault()
-    // setNewTrans({...newTrans, user_id :user.id})
-    // console.log(newTrans)
-    // debugger
     fetch("/transactions", {
       method: "POST",
       headers:{
           "Content-Type": "application/json"
       },
-      body: JSON.stringify({newTrans}),
-   })
+      body: JSON.stringify(newTrans),
+   }).then(response => response.json())
+   .then(json => {
+       fetch("/me/transactions")
+       .then(resp => resp.json())
+       .then(data => setTrans(data.transactions))
+       });
   }
  
    const totalDeposits = trans.reduce((accumulator, object) => {
@@ -62,7 +67,7 @@ function Account({user}) {
             response.json().then((data) => setTrans(data.transactions));
           }
         });
-      }, []);
+      }, [])
 
     return (
         
@@ -86,7 +91,7 @@ function Account({user}) {
         {trans.map((val, key) => {
           return (
             <tr key={key}>
-              <td>{val.discription}</td>
+              <td>{val.description}</td>
               <td>{val.deposit}</td>
               <td>{val.expenditure}</td>
             </tr>

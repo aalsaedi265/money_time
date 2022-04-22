@@ -1,3 +1,3 @@
 class TransactionSerializer < ActiveModel::Serializer
-  attributes :id, :deposit, :expenditure, :discription
+  attributes :id, :deposit, :expenditure, :description
 end

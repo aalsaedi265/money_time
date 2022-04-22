@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_04_21_135737) do
     t.float "expenditure"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "discription"
+    t.string "description"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
