@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./Login.css"
 import {Link} from "react-router-dom"
 
-function Login ({onLogin}){
+function Login ({user,onLogin}){
 
     
 const [username, setUsername] = useState("")
@@ -37,10 +37,15 @@ const [pass, setPass] =useState("")
     })
 }   
 
-  
+
     return (
-       
-<div className="test">
+       <div>
+        {user ? (
+            <div className="test2">
+            <h2 className='logmsg'>Mobile App comming soon!</h2>
+            </div>
+          ) : (
+            <div className="test">
         <div className="imgcontainer">
             <h2 className='texthome'>Simply your banking</h2>
             <p className='texthome' >Checking made easy</p>
@@ -92,11 +97,14 @@ const [pass, setPass] =useState("")
     </form>
 
    
-  
 
- </div>    
+ </div>     
+          )}
+        </div>
+
     )
 }
 
 export default Login;
 
+ 

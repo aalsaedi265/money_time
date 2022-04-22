@@ -48,7 +48,7 @@ function App() {
 
       <Route exact path="/MyAccount" element={ <Account user={user}/>} />
 
-      <Route exact  path= "/" element={ <Login onLogin={handleLogin}/> } />
+      <Route exact  path= "/" element={ <Login user={user}onLogin={handleLogin}/> } />
 
       <Route exact path= "/sighup" element={ <Sighup setUser={setUser} user={user}/> } />
 
