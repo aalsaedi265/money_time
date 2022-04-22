@@ -6,7 +6,7 @@
     align-items: center;
   } */
     
-  table {
+  /* table {
     border: 2px solid forestgreen;
     width: 800px;
     height: 200px;
@@ -23,8 +23,41 @@
   #totalBalance{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
+
+  } */
+
+
+
+
+  #fullList {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+  }
+  
+  #fullList td, #fullList th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #fullList tr:nth-child(even){background-color: #af6a6a;}
+  
+  #fullList tr:hover {background-color: #ddd;}
+  
+  #fullList th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+
+
+  .trans{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
   }
 
-  
-  
-  
