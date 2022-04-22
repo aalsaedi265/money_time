@@ -42,6 +42,8 @@ const [pass, setPass] =useState("")
 
 
     return (
+
+
        <div>
         {user ? (
             <div className="test2">
@@ -94,10 +96,10 @@ const [pass, setPass] =useState("")
         <div className="btnSection">
       <button className= "btn btn-gradient btn-glow" type="submit"
       
-      onClick={()=> {
-          setPassword(()=>"")
-          setUsername(()=>"")
-      }}
+    //   onClick={()=> {
+    //       setPassword(()=>"")
+    //       setUsername(()=>"")
+    //   }}
       
       > 
       
