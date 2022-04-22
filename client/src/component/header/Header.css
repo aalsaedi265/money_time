@@ -15,13 +15,11 @@
   position: relative; */
   margin: 20px;
   top:12px;
-
 }
 .header{
     background: linear-gradient(to right, #30CFD0, #c43ad6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 .containerNav{
@@ -49,6 +47,7 @@
 } */
 #loginButton {
     position: absolute;
+    color: white;
     top: 0px;
     right: 0px;
     font-size: 100px;
