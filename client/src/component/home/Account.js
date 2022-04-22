@@ -78,7 +78,7 @@ function Account({user}) {
     {user ? (
        
 
-<div className="App">
+<div className="acc">
     <h3 id="totalBalance">Your Total Balance is ${sum}</h3>
 
     <div className="trans">

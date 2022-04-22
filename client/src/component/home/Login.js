@@ -39,13 +39,14 @@ const [pass, setPass] =useState("")
 
   
     return (
-<div className="home">
-        {/* <div className="imgcontainer">
-
-            <img className="sideView" src="https://www.ledreclamebords.com/Files/5/18000/18694/ProductPhotos/1000/1658327210.jpg" alt="hot pic"/>
+       
+<div className="test">
+        <div className="imgcontainer">
+            <h2 className='texthome'>Simply your banking</h2>
+            <p className='texthome' >Checking made easy</p>
 
             
-        </div> */}
+        </div>
 
      <form onSubmit={handleSubmit} className="container" >
 
@@ -91,8 +92,9 @@ const [pass, setPass] =useState("")
     </form>
 
    
+  
 
- </div>       
+ </div>    
     )
 }
 

@@ -69,3 +69,23 @@ button {
   label{
       color: RGB(22, 246, 25);
   }
+
+  .test{
+    background-image: url("https://i.imgur.com/21CjfUE.jpg");
+    height: 600px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+    background-repeat: no-repeat;
+    position: relative;
+
+  }
+
+  .texthome{
+    color: rgb(20, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1.82352941rem;
+    text-align: center;
+  
+  }
