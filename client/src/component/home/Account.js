@@ -120,31 +120,6 @@ function Account({user}) {
         </form>
     </div>
     </div>
-
-
-
-
-
-    //    <div className="App">
-    //    <table>
-    //      <tr>
-    //        <th>Descirptions</th>
-    //        <th>Deposits/Credits</th>
-    //        <th>Withdrawals/Debits</th>
-    //      </tr>
-    //      {trans.map((val) => {
-    //       return (
-    //         <tr >
-    //           <td>{val.name}</td>
-    //           <td>{val.age}</td>
-    //           <td>{val.gender}</td>
-    //         </tr>
-    //       )
-    //     })}
-    //   </table>
-    // </div>
-
-
        
       ) : (
         <div>
