@@ -35,6 +35,9 @@ const [pass, setPass] =useState("")
             })
         }
     })
+
+
+
 }   
 
   
@@ -81,10 +84,22 @@ const [pass, setPass] =useState("")
     />
 
 <p className="error"> {pass}</p>
-    
+{/* <Link to="/MyAccount"> {loading? "Loading...": "Login"  }</Link> */}
     <br></br>
         <div className="btnSection">
-    <button className= "btn btn-gradient btn-glow" type="submit"> {loading? "Loading...": "Login" }</button>
+      <button className= "btn btn-gradient btn-glow" type="submit"
+      
+      onClick={()=> {
+          setPassword(()=>"")
+          setUsername(()=>"")
+      }}
+      
+      > 
+      
+      {loading? <Link to="/MyAccount"> "Loading..." </Link>: "Login" }
+      
+      
+      </button>
 
     <Link to="/sighup"> <button className= "btn btn-gradient btn-glow" > sighup </button> </Link>
         </div>
